@@ -75,6 +75,7 @@ alias nv='nvim'
 alias cat='bat'
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'
+alias rga='rg --hidden --no-ignore'
 #alias =''
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
