@@ -41,6 +41,15 @@ M.Splits = {
   n = {
     ["|"] = { "<cmd> vsplit<CR>", "Vertical split" },
     ["\\"] = { "<cmd> split<CR>", "Horizontal split" },
+
+    ["<M-Left>"] = { function() require("smart-splits").move_cursor_left() end, "Move to left split" },
+    ["<M-Up>"] = { function() require("smart-splits").move_cursor_down() end, "Move to below split" },
+    ["<M-Down>"] = { function() require("smart-splits").move_cursor_up() end, "Move to above split" },
+    ["<M-Right>"] = { function() require("smart-splits").move_cursor_right() end, "Move to right split" },
+    ["<C-Up>"] = { function() require("smart-splits").resize_up() end, "Resize split up" },
+    ["<C-Down>"] = { function() require("smart-splits").resize_down() end, "Resize split down" },
+    ["<C-Left>"] = { function() require("smart-splits").resize_left() end, "Resize split left" },
+    ["<C-Right>"] = { function() require("smart-splits").resize_right() end, "Resize split right" },
   }
 }
 
