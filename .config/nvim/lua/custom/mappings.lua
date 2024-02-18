@@ -35,4 +35,34 @@ M.tmuxNav = {
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "Window up" },
   }
 }
+
+-- Window Splits
+M.Splits = {
+  n = {
+    ["|"] = { "<cmd> vsplit<CR>", "Vertical split" },
+    ["\\"] = { "<cmd> split<CR>", "Horizontal split" },
+  }
+}
+
+M.nvimtree = {
+  plugin = true,
+
+  n = {
+    -- toggle
+    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+
+    -- focus
+    ["<leader>e"] = {
+      function()
+        if vim.fn.bufname():match 'NvimTree_' then
+          vim.cmd.wincmd 'p'
+        else
+          vim.cmd('NvimTreeFocus')
+        end
+      end,
+      "Toggle Nvimtree focus"
+    }
+  }
+}
+
 return M
