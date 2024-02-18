@@ -60,6 +60,11 @@ local plugins = {
     lazy = false,
   },
 
+  {
+    "mrjones2014/smart-splits.nvim",
+    lazy = false,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
