@@ -72,6 +72,7 @@ local plugins = {
       require("presence").setup({
         neovim_image_text = "NeoVim: For those who want to edit like it's 1999, but with 2024 technology!",
         enable_line_number = true,
+        show_time = false,
         buttons = false,
         -- buttons = { { label = "GitHub Profile", url = "https://github.com/mroetsc" } }
       })
