@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check for NVIDIA GPU using nvidia-smi
-nvidia_gpu=$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits | head -n 1)
+# nvidia_gpu=$(nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits | head -n 1)
 
 # Function to execute the AMD GPU Python script and use its output
 execute_amd_script() {
