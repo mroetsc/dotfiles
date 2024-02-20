@@ -4,7 +4,7 @@
 /* -> less needs to be installed with `npm install less -g` */
 /* ---Main styling--- */
 * {
-  padding: 0px 3px 0px;
+  padding: 0px;
   margin: 0px;
 }
 window#waybar {
@@ -58,14 +58,14 @@ tooltip label {
 }
 #workspaces,
 #taskbar {
-  background: blue;
+  background: rgba(0, 0, 0, 0.8);
   color: red;
 }
 #user {
-  background: red;
+  background: rgba(0, 0, 0, 0.6);
 }
 #custom-spotify {
-  background: cyan;
+  background: rgba(0, 0, 0, 0.4);
   padding: 4px;
 }
 #custom-end-sep {
@@ -73,23 +73,23 @@ tooltip label {
   font-size: 15px;
 }
 #tray {
-  background: purple;
+  background: rgba(0, 0, 0, 0.2);
 }
 #network,
 #bluetooth,
 #pulseaudio,
 #pulseaudio#microphone {
-  background: cyan;
+  background: rgba(0, 0, 0, 0.4);
 }
 #cpu,
 #memory,
 #custom-gpuinfo {
-  background: red;
+  background: rgba(0, 0, 0, 0.6);
 }
 #custom-updates,
 #custom-cliphist,
 #backlight,
 #battery,
 #custom-power {
-  background-color: blue;
+  background-color: rgba(0, 0, 0, 0.8);
 }
