@@ -1,12 +1,23 @@
 /* ----- Style for waybar -----  */
+
 /* --- Colors --- */
 /* Configured in style.less and compiled to css with `lessc style.less style.css`. This enables defining variables and some other useful features of less */
 /* -> less needs to be installed with `npm install less -g` */
+
+@main-bg: rgba(0, 0, 0, 0);
+@main-text: #e0f2fc;
+@weight1-bg: blue;
+@weight2-bg: red;
+@weight3-bg: cyan;
+@weight4-bg: purple;
+
 /* ---Main styling--- */
+
 * {
   padding: 0px 3px 0px;
   margin: 0px;
 }
+
 window#waybar {
   border: none;
   border-radius: 0px;
@@ -15,9 +26,10 @@ window#waybar {
   font-size: 12px;
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0);
-  color: #e0f2fc;
+  background: @main-bg;
+  color: @main-text;
 }
+
 tooltip {
   background: rgba(43, 48, 59, 0.5);
   border: 1px solid rgba(100, 114, 125, 0.5);
@@ -25,71 +37,85 @@ tooltip {
 tooltip label {
   color: white;
 }
+
 #workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: white;
+    padding: 0 5px;
+    background: transparent;
+    color: white;
 }
+
 #workspaces button.focused {
-  background: #64727D;
+    background: #64727D;
 }
+
 #battery {
-  background-color: #ffffff;
-  color: black;
-}
-#battery.charging {
-  color: white;
-  background-color: #26A65B;
-}
-@keyframes blink {
-  to {
     background-color: #ffffff;
     color: black;
-  }
 }
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
 #battery.warning:not(.charging) {
-  background: #f53c3c;
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
+
 #workspaces,
 #taskbar {
-  background: blue;
+  background: @weight1-bg;
   color: red;
 }
+
 #user {
-  background: red;
+  background: @weight2-bg;
 }
+
 #custom-spotify {
-  background: cyan;
+  background: @weight3-bg;
   padding: 4px;
 }
+
 #custom-end-sep {
   color: cyan;
   font-size: 15px;
 }
+
 #tray {
-  background: purple;
+  background: @weight4-bg;
 }
+
 #network,
 #bluetooth,
 #pulseaudio,
 #pulseaudio#microphone {
-  background: cyan;
+  background: @weight3-bg;
 }
+
 #cpu,
 #memory,
 #custom-gpuinfo {
-  background: red;
+  background: @weight2-bg;
 }
+
 #custom-updates,
 #custom-cliphist,
 #backlight,
 #battery,
 #custom-power {
-  background-color: blue;
+  background-color: @weight1-bg;
 }

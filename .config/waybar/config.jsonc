@@ -1,16 +1,45 @@
 // ----- Custom config for waybar ----- //
 {
     // --- General settings --- //
+
     "layer": "top",
     "position": "top",
-    "height": 20,
+    "height": 5,
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar", "custom/spotify"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "pulseaudio#microphone", "cpu", "memory", "custom/gpuinfo", "custom/updates", "custom/cliphist", "backlight", "battery", "custom/power"],
+    "spacing": 0,
+
+    // --- Modules --- //
+
+    "modules-left": [
+      "hyprland/workspaces",
+      "wlr/taskbar",
+      "user",
+      "custom/spotify",
+      "custom/end-sep"
+    ],
+
+    "modules-center": [
+      "clock"
+    ],
+
+    "modules-right": [
+      "tray",
+      "network",
+      "bluetooth",
+      "pulseaudio",
+      "pulseaudio#microphone",
+      "cpu",
+      "memory",
+      "custom/gpuinfo",
+      "custom/updates",
+      "custom/cliphist",
+      "backlight",
+      "battery",
+      "custom/power"
+    ],
 
     // --- Left Modules --- //
+
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -22,23 +51,27 @@
 
     "wlr/taskbar": {
       "format": "{icon}",
-      "icon-size": 19,
+      "icon-size": 16,
       "icon-theme": "Tela-circle-dracula",
-          "spacing": 0,
+      "spacing": 5,
       "tooltip-format": "{title}",
       "on-click": "activate",
       "on-click-middle": "close",
-      "ignore-list": [
-        "Alacritty"
-      ],
-      "app_ids-mapping": {
-        "firefoxdeveloperedition": "firefox-developer-edition"
-      }
+      "ignore-list": [],
+      "app_ids-mapping": {}
+    },
+
+    "user": {
+        "format": " {user}",
+        "tooltip-format": "Up since {work_M}m",
+        "interval": 60,
+        "icon": true,
+        "tooltip": true
     },
 
     "custom/spotify": {
         "exec": "/usr/bin/python3 /home/mattes/.config/waybar/modules/mediaplayer.py --player spotify",
-        "format": " {}",
+        "format": "{}",
         "return-type": "json",
         "on-click": "playerctl play-pause --player spotify",
         "on-click-right": "playerctl next --player spotify",
@@ -53,15 +86,15 @@
     // --- Center Modules --- //
 
     "clock": {
-        "format": "{:%R | %d.%m.%y}",
-        "format-alt": "{:%R:%S | %d.%m.%y}",
+        "format": "{:%R / %d.%m.%y}",
+        "format-alt": "{:%R:%S / %d.%m.%y}",
         "interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
             "on-scroll": 1,
-            "on-click-right": "mode",
+"on-click-right": "mode",
             "format": {
                 "months": "<span color='#ffead3'><b>{}</b></span>",
                 "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
@@ -80,24 +113,24 @@
     // --- Right Modules --- //
 
     "tray": {
-        "icon-size": 19,
+        "icon-size": 20,
         "spacing": 5
     },
 
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        // "interface": "wlp4v*", // (Optional) To force the use of this interface
         "format-wifi": "󰤨 {essid}",
-        "format-ethernet": "󱘖 Wired",
-        "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-ethernet": "󱘖 Wired |  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "tooltip-format": "󱘖 {ipaddr}",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
-        "interval": 5
+        "interval": 3
     },
 
     "bluetooth": {
-        "format": "",
-        "format-disabled": "",
+        "format": " ",
+        "format-disabled": " ",
         "format-connected": " {num_connections}",
         "tooltip-format": " {device_alias}",
         "tooltip-format-connected": "{device_enumerate}",
@@ -208,5 +241,20 @@
         "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
         "interval" : 86400,
         "tooltip": true
+    },
+
+    // --- Padding Modules --- //
+    // -> are named after the direction they are facing -> bl-tr-slope = bottom-left to top-right slope
+
+    "custom/start-sep": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false
+    },
+
+    "custom/end-sep": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false
     }
 }
