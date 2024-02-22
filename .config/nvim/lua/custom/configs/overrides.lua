@@ -45,6 +45,7 @@ M.mason = {
     "pyright",
     "typos_lsp",
     "rust_analyzer",
+    "spectral",
   },
 }
 
