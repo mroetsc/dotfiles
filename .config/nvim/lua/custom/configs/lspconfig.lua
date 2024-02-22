@@ -12,6 +12,7 @@ local servers = {
   "typos_lsp",
   "pyright",
   "rust_analyzer",
+  "spectral",
 }
 
 for _, lsp in ipairs(servers) do
