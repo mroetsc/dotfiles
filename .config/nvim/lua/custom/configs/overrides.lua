@@ -46,6 +46,7 @@ M.mason = {
     "typos_lsp",
     "rust_analyzer",
     "spectral",
+    "bashls",
   },
 }
 
