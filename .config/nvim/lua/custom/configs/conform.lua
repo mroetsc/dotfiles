@@ -11,8 +11,8 @@ local options = {
 
 		sh = { "shfmt" },
 
-    python = { "ast-grep" },
-    rust = { "ast-grep" },
+		python = { "ast-grep" },
+		rust = { "ast-grep" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some
