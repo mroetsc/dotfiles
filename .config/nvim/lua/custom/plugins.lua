@@ -79,6 +79,13 @@ local plugins = {
     end,
   },
 
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+    end
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
