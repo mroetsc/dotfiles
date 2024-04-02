@@ -12,10 +12,10 @@
 
     "modules-left": [
       "hyprland/workspaces",
+      "custom/separator",
       "wlr/taskbar",
-      "user",
-      "custom/spotify",
-      "custom/end-sep"
+      "custom/separator",
+      "custom/spotify"
     ],
 
     "modules-center": [
@@ -24,18 +24,27 @@
 
     "modules-right": [
       "tray",
+      "custom/separator",
       "network",
       "bluetooth",
       "pulseaudio",
+      "custom/spacer",
       "pulseaudio#microphone",
+      "custom/separator",
       "cpu",
+      "custom/spacer",
       "memory",
+      "custom/spacer",
       "custom/gpuinfo",
+      "custom/separator",
       "custom/updates",
+      "custom/spacer",
       "custom/cliphist",
+      "custom/separator",
       "backlight",
       "battery",
-      "custom/power"
+      "custom/power",
+      "custom/spacer"
     ],
 
     // --- Left Modules --- //
@@ -59,14 +68,6 @@
       "on-click-middle": "close",
       "ignore-list": [],
       "app_ids-mapping": {}
-    },
-
-    "user": {
-        "format": " {user}",
-        "tooltip-format": "Up since {work_M}m",
-        "interval": 60,
-        "icon": true,
-        "tooltip": true
     },
 
     "custom/spotify": {
@@ -94,7 +95,7 @@
             "mode": "month",
             "mode-mon-col": 3,
             "on-scroll": 1,
-"on-click-right": "mode",
+            "on-click-right": "mode",
             "format": {
                 "months": "<span color='#ffead3'><b>{}</b></span>",
                 "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
@@ -120,8 +121,8 @@
     "network": {
         // "interface": "wlp4v*", // (Optional) To force the use of this interface
         "format-wifi": "󰤨 {essid}",
-        "format-ethernet": "󱘖 Wired |  {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "tooltip-format": "󱘖 {ipaddr}",
+        "format-ethernet": "󱘖 Wired",
+        "tooltip-format": "󱘖 {ipaddr} |  {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-linked": "󱘖 {ifname} (No IP)",
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
@@ -246,13 +247,13 @@
     // --- Padding Modules --- //
     // -> are named after the direction they are facing -> bl-tr-slope = bottom-left to top-right slope
 
-    "custom/start-sep": {
-      "format": " ",
+    "custom/separator": {
+      "format": "|",
       "interval": "once",
       "tooltip": false
     },
 
-    "custom/end-sep": {
+    "custom/spacer": {
       "format": " ",
       "interval": "once",
       "tooltip": false

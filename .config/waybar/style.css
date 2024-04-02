@@ -23,29 +23,28 @@ tooltip {
   border: 1px solid rgba(100, 114, 125, 0.5);
 }
 tooltip label {
-  color: white;
+  color: #e0f2fc;
 }
+/* --- Workspaces --- */
 #workspaces button {
   padding: 0 5px;
-  background: transparent;
-  color: white;
+  color: #e0f2fc;
+}
+#workspaces button.active {
+  padding: 0 5px;
+  color: rgba(220, 100, 15, 0.8);
+  font-weight: bold;
+  background: rgba(30, 90, 130, 0.2);
 }
 #workspaces button.focused {
-  background: #64727D;
+  background: rgba(25, 75, 110, 0.5);
 }
+/* --- Battery --- */
 #battery {
-  background-color: #ffffff;
-  color: black;
+  color: #e0f2fc;
 }
 #battery.charging {
-  color: white;
-  background-color: #26A65B;
-}
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
+  color: #e0f2fc;
 }
 #battery.warning:not(.charging) {
   background: #f53c3c;
@@ -56,40 +55,19 @@ tooltip label {
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-#workspaces,
-#taskbar {
-  background: rgba(0, 0, 0, 0.8);
-  color: red;
+/* --- Animations --- */
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
 }
-#user {
-  background: rgba(0, 0, 0, 0.6);
+/* --- Spacers --- */
+#custom-separator {
+  background: transparent;
+  padding: 0px 5px;
 }
-#custom-spotify {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 4px;
-}
-#custom-end-sep {
-  color: cyan;
-  font-size: 15px;
-}
-#tray {
-  background: rgba(0, 0, 0, 0.2);
-}
-#network,
-#bluetooth,
-#pulseaudio,
-#pulseaudio#microphone {
-  background: rgba(0, 0, 0, 0.4);
-}
-#cpu,
-#memory,
-#custom-gpuinfo {
-  background: rgba(0, 0, 0, 0.6);
-}
-#custom-updates,
-#custom-cliphist,
-#backlight,
-#battery,
-#custom-power {
-  background-color: rgba(0, 0, 0, 0.8);
+#custom-spacer {
+  background: transparent;
+  padding: 0px 0.5px;
 }
