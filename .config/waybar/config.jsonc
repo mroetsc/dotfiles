@@ -19,7 +19,9 @@
     ],
 
     "modules-center": [
-      "clock"
+      "clock",
+      "custom/separator",
+      "custom/system-uptime"
     ],
 
     "modules-right": [
@@ -109,6 +111,13 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
         }
+    },
+
+    "custom/system-uptime": {
+        "format": "↑ {}",
+        "interval": 1,
+        "exec": "/home/mattes/.config/waybar/modules/system-uptime.sh",
+        "return-type": "json"
     },
 
     // --- Right Modules --- //
