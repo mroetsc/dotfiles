@@ -10,6 +10,7 @@ configuration {
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 10";
     icon-theme:                  "Tela-circle-dracula";
+    kb-show-window:              "Super+Shift+Tab";
 }
 
 @theme "~/.config/rofi/themes/theme.rasi"
