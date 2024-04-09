@@ -6,5 +6,9 @@ This repo contains my personal Dotfiles, managed with stow
 - stow
 
 # Setup
-1. Clone this repo (preferably into `~/dotfiles`)
-2. Link dotfiles with `stow .` (must be ran from dotfiles directory)
+Clone this Repo into home directory, cd into it and link the config with stow.
+```
+git clone https://github.com/mroetsc/dotfiles.git ~
+cd ~/dotfiles
+stow .
+```
