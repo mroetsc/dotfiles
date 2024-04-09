@@ -70,7 +70,7 @@ local plugins = {
     lazy = false,
     config = function()
       require("presence").setup({
-        neovim_image_text = "NeoVim: For those who want to edit like it's 1999, but with 2024 technology!",
+        neovim_image_text = "Because Neo Vi Improved sounds too bulky",
         enable_line_number = true,
         show_time = false,
         buttons = false,
@@ -83,6 +83,10 @@ local plugins = {
     "lervag/vimtex",
     lazy = false,
     init = function()
+      vim.cmd("filetype plugin indent on")
+      vim.cmd("syntax enable")
+      vim.g.vimtex_view_method = 'zathura'
+
       vim.g.vimtex_compiler_latexmk = {
           options = {
             '--auxdir=./build',
