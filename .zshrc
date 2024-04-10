@@ -78,6 +78,11 @@ alias cat='bat'
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'
 alias rga='rg --hidden --no-ignore'
+alias cdf='cd $(find * -type d | fzf)'
+alias pacsear="pacman -Slq | sk --multi --preview 'pacman -Si {1}'"
+alias pacsearin="pacman -Slq | sk --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias yasear="yay -Slq | sk --multi --preview 'yay -Si {1}'"
+alias yasearin="yay -Slq | sk --multi --preview 'yay -Si {1}' | xargs -rp yay -S"
 #alias =''
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
