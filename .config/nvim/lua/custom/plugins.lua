@@ -95,6 +95,14 @@ local plugins = {
     end
   },
 
+  {
+    "simrat39/rust-tools.nvim",
+    lazy = false,
+    config = function()
+      require "custom.configs.rust-tools"
+    end,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
