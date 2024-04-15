@@ -98,6 +98,7 @@ local default_plugins = {
   -- lsp stuff
   {
     "williamboman/mason.nvim",
+    lazy = false,
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     opts = function()
       return require "plugins.configs.mason"
@@ -118,7 +119,13 @@ local default_plugins = {
   },
 
   {
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+  },
+
+  {
     "neovim/nvim-lspconfig",
+    lazy = false,
     event = "User FilePost",
     config = function()
       require "plugins.configs.lspconfig"
