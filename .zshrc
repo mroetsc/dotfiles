@@ -110,6 +110,7 @@ alias pacsear="pacman -Slq | sk --multi --preview 'pacman -Si {1}'"
 alias pacsearin="pacman -Slq | sk --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias yasear="yay -Slq | sk --multi --preview 'yay -Si {1}'"
 alias yasearin="yay -Slq | sk --multi --preview 'yay -Si {1}' | xargs -rp yay -S"
+alias uvp="uv pip"
 #alias =''
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
