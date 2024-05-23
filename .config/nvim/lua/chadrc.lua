@@ -1,8 +1,8 @@
-local M = {}
+-- This file  needs to have same structure as nvconfig.lua 
+-- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
 
-M.options = {
-  nvchad_branch = "v2.0",
-}
+---@type ChadrcConfig
+local M = {}
 
 M.ui = {
   ------------------------------- base46 -------------------------------------
@@ -10,8 +10,7 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme = "ayu_dark", -- default theme
   transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
@@ -40,10 +39,10 @@ M.ui = {
 
   -- lazyload it when there are 1+ buffers
   tabufline = {
-    show_numbers = false,
     enabled = true,
     lazyload = true,
-    overriden_modules = nil,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = nil,
   },
 
   -- nvdash (dashboard)
@@ -78,19 +77,20 @@ M.ui = {
 
   cheatsheet = { theme = "grid" }, -- simple/grid
 
-  lsp = {
-    -- show function signatures i.e args as you type
-    signature = {
-      disabled = false,
-      silent = true, -- silences 'no signature help available' message from appearing
+  lsp = { signature = true },
+
+    term = {
+    hl = "Normal:term,WinSeparator:WinSeparator",
+    sizes = { sp = 0.3, vsp = 0.2 },
+    float = {
+      relative = "editor",
+      row = 0.3,
+      col = 0.25,
+      width = 0.5,
+      height = 0.4,
+      border = "single",
     },
   },
 }
-
-M.plugins = "" -- path i.e "custom.plugins", so make custom/plugins.lua file
-
-M.lazy_nvim = require "plugins.configs.lazy_nvim" -- config for lazy.nvim startup options
-
-M.mappings = require "core.mappings"
 
 return M
