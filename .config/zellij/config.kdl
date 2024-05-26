@@ -24,7 +24,6 @@ disable_session_metadata false
 // |---- LAYOUTS ----| //
 // ------------------- //
 
-layout_dir "~/.config/zellij/layouts"
 default_layout "default"
 
 // -------------- //
@@ -202,6 +201,12 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        bind "Ctrl l" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/z-layouts.wasm" {
+                floating true
+                ignore_case true
+            }
+        }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -229,6 +234,10 @@ keybinds {
     }
 }
 
+// ------------------- //
+// |---- PLUGINS ----| //
+// ------------------- //
+
 plugins {
     tab-bar location="zellij:tab-bar"
     status-bar location="zellij:status-bar"
@@ -247,9 +256,35 @@ plugins {
 // |---- THEMES ----| //
 // ------------------ //
 
-theme "catppuccin-mocha"
+theme "custom"
 
 themes {
+    custom {
+        bg "#0b0e1a"
+        fg "#363a4f"
+        red "#a05661"
+        green "#a6e3a1"
+        blue "#8aadf4"
+        yellow "#ffd700"
+        magenta "#c6a0f6"
+        orange "#f5a97f"
+        cyan "#8aadf4"
+        black "#181825"
+        white "#e0f2fc"
+    }
+    catppuccin-mocha {
+        fg "#cdd6f4"
+        bg "#585b70"
+        black "#181825"
+        red "#f38ba8"
+        green "#a6e3a1"
+        yellow "#f9e2af"
+        blue "#89b4fa"
+        magenta "#f5c2e7"
+        cyan "#89dceb"
+        white "#cdd6f4"
+        orange "#fab387"
+    }
     nord {
         fg "#D8DEE9"
         bg "#2E3440"
