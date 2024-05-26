@@ -87,6 +87,37 @@ function jelly {
   scp "$source" "${JELLY_USER}@${JELLY_IP}:${JELLY_PATH}"
 }
 
+# Some zellij helpers
+
+function zr () { zellij run --name "$*" -- zsh -ic "$*";}
+function zrf () { zellij run --name "$*" --floating -- zsh -ic "$*";}
+function zri () { zellij run --name "$*" --in-place -- zsh -ic "$*";}
+function ze () { zellij edit "$*";}
+function zef () { zellij edit --floating "$*";}
+function zei () { zellij edit --in-place "$*";}
+function zpipe () {
+  if [ -z "$1" ]; then
+    zellij pipe;
+  else
+    zellij pipe -p $1;
+  fi
+}
+
+zellij_tab_name_update() {
+    if [[ -n $ZELLIJ ]]; then
+        local current_dir=$PWD
+        if [[ $current_dir == $HOME ]]; then
+            current_dir="~"
+        else
+            current_dir=${current_dir##*/}
+        fi
+        command nohup zellij action rename-tab $current_dir >/dev/null 2>&1
+    fi
+}
+
+zellij_tab_name_update
+chpwd_functions+=(zellij_tab_name_update)
+
 # Helpful aliases
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
