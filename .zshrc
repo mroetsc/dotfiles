@@ -134,9 +134,6 @@ alias yasearin="yay -Slq | sk --multi --preview 'yay -Si {1}' | xargs -rp yay -S
 alias uvp="uv pip"
 #alias =''
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # Custom exports
 export VISUAL="nvim"
 export EDITOR="nvim"
