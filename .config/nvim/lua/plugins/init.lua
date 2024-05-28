@@ -22,7 +22,8 @@ return {
   		ensure_installed = {
   			"lua-language-server", "stylua",
   			"html-lsp", "css-lsp" , "prettier",
-        "pyright", "jinja-lsp",
+        "pyright", "jinja-lsp", "rust-analyzer",
+        "codelldb",
   		},
   	},
   },
@@ -35,6 +36,24 @@ return {
        "html", "css"
   		},
   	},
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4',
+    lazy = false,
   },
 
   {
