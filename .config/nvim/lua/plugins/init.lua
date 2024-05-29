@@ -85,6 +85,11 @@ return {
   },
 
   {
+    "Glench/Vim-Jinja2-Syntax",
+    ft = "jinja",
+  },
+
+  {
     "kdheepak/lazygit.nvim",
     lazy = false,
     config = function ()
@@ -118,7 +123,7 @@ return {
 
   {
     "lervag/vimtex",
-    lazy = false,
+    ft = "tex",
     init = function()
       vim.cmd("filetype plugin indent on")
       vim.cmd("syntax enable")
