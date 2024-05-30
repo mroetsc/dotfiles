@@ -63,6 +63,7 @@ return {
     opts = {
       keywords = {
         FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },},
+        DEBUG = { icon = " ", color = "#fc520a" },
         TODO = { icon = " ", color = "#43bbc6" },
         HACK = { icon = " ", color = "warning" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
