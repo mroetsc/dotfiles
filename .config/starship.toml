@@ -19,7 +19,7 @@ use_logical_path = false
 ### Git ###
 
 [git_branch]
-symbol = " "
+symbol = " "
 
 [git_status]
 ahead = '⇡${count}'
