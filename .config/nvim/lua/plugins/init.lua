@@ -23,7 +23,7 @@ return {
   			"html-lsp", "css-lsp" , "prettier",
         "pyright", "jinja-lsp", "rust-analyzer",
         "codelldb", "yaml-language-server", "typos-lsp",
-        "bash-language-server",
+        "bash-language-server", "twiggy-language-server",
   		},
   	},
   },
@@ -33,7 +33,7 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
-       "html", "css"
+       "html", "css", "twig",
   		},
   	},
   },
