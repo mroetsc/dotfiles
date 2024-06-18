@@ -10,7 +10,7 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme = "catppuccin",
+  theme = "ayu_dark",
   transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
