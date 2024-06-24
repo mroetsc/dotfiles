@@ -50,6 +50,13 @@ function in {
     fi
 }
 
+function gnew {
+  local repo_name="$1"
+  mkdir $repo_name
+  cd $repo_name
+  git init
+}
+
 function jelly {
   local source="$1"
 
