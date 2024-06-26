@@ -84,6 +84,15 @@ function jelly {
   scp "$source" "${JELLY_USER}@${JELLY_IP}:${JELLY_PATH}"
 }
 
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # Some zellij helpers
 
 function zr () { zellij run --name "$*" -- zsh -ic "$*";}
