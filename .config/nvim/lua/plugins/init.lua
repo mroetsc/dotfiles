@@ -124,49 +124,59 @@ return {
   },
 
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    opts = {
-      provider = "claude",
-      claude = {
-        model = "claude-3-haiku-20240307",
-        temperature = 0,
-        max_tokens = 1000,
-      },
-    },
-    keys = {
-      { "<leader>kt", function() require("avante.api").ask() end, desc = "avante: ask", mode = { "n", "v" } },
-      { "<leader>kr", function() require("avante.api").refresh() end, desc = "avante: refresh" },
-      { "<leader>ke", function() require("avante.api").edit() end, desc = "avante: edit", mode = "v" },
-    },
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = "markdown",
+    opts = {},
     dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons",
-      {
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-          },
-        },
-      },
-      {
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-      },
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
     },
   },
+
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   lazy = false,
+  --   opts = {
+  --     provider = "claude",
+  --     claude = {
+  --       model = "claude-3-haiku-20240307",
+  --       temperature = 0,
+  --       max_tokens = 1000,
+  --     },
+  --   },
+  --   keys = {
+  --     { "<leader>kt", function() require("avante.api").ask() end, desc = "avante: ask", mode = { "n", "v" } },
+  --     { "<leader>kr", function() require("avante.api").refresh() end, desc = "avante: refresh" },
+  --     { "<leader>ke", function() require("avante.api").edit() end, desc = "avante: edit", mode = "v" },
+  --   },
+  --   dependencies = {
+  --     "stevearc/dressing.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --     {
+  --       "HakonHarnes/img-clip.nvim",
+  --       event = "VeryLazy",
+  --       opts = {
+  --         default = {
+  --           embed_image_as_base64 = false,
+  --           prompt_for_file_name = false,
+  --           drag_and_drop = {
+  --             insert_mode = true,
+  --           },
+  --         },
+  --       },
+  --     },
+  --     {
+  --       'MeanderingProgrammer/render-markdown.nvim',
+  --       opts = {
+  --         file_types = { "markdown", "Avante" },
+  --       },
+  --       ft = { "markdown", "Avante" },
+  --     },
+  --   },
+  -- },
 
   {
     "lervag/vimtex",

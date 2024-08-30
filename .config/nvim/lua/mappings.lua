@@ -10,6 +10,9 @@ map("i", "jk", "<ESC>")
 -- LazyGit
 vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
 
+-- Render Markdown
+vim.api.nvim_set_keymap('n', '<leader>mt', ':RenderMarkdown toggle<CR>', {noremap = true, silent = true})
+
 -- Tmux Navigation
 vim.api.nvim_set_keymap('n', '<C-h>', '<cmd> TmuxNavigateLeft<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<cmd> TmuxNavigateRight<CR>', { noremap = true, silent = true })
