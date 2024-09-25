@@ -33,7 +33,8 @@ return {
   	opts = {
   		ensure_installed = {
   			"vim", "lua", "vimdoc",
-       "html", "css", "twig",
+        "html", "css", "twig",
+        "latex",
   		},
   	},
   },
@@ -185,6 +186,7 @@ return {
       vim.cmd("filetype plugin indent on")
       vim.cmd("syntax enable")
       vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_fold_enabled = true
 
       vim.g.vimtex_compiler_latexmk = {
           options = {
