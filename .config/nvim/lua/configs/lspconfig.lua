@@ -1,36 +1,24 @@
--- EXAMPLE 
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+-- load defaults i.e lua_lsp
+require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
-local util = require "lspconfig/util"
-local servers = { "html", "cssls", "pyright", "jinja_lsp", "yamlls", "bashls", "twiggy_language_server" }
+
+-- EXAMPLE
+local servers = { "html", "cssls" }
+local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
   }
 end
 
--- typescript
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
-
--- typos lsp
-lspconfig.typos_lsp.setup({
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-
-  init_options = {
-    config = '~/.config/nvim/lua/configs/sub/typos_lsp.toml',
-    diagnosticSeverity = "Warning"
-  }
-})
+-- configuring single server, example: typescript
+-- lspconfig.ts_ls.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+-- }
