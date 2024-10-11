@@ -1,5 +1,5 @@
 return {
-  -- LSP
+  "lua_ls",
   "html",
   "cssls",
   "pyright",
@@ -8,4 +8,5 @@ return {
   "bashls",
   "twiggy_language_server",
   "typos_lsp",
+  "rust_analyzer",
 }
