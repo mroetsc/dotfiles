@@ -1,7 +1,5 @@
 require "nvchad.options"
 
--- add yours here!
-
 vim.filetype.add {
   extension = {
     jinja = 'jinja',
