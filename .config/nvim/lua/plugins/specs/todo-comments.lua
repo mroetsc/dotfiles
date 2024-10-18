@@ -1,6 +1,17 @@
 return {
   "folke/todo-comments.nvim",
   lazy = false,
+  keys = {
+    { "<leader>td", "<cmd>TodoTelescope keywords=TODO<cr>", desc = "Telescope TODO list" },
+    { "<leader>tf", "<cmd>TodoTelescope keywords=FIX,DEBUG,HACK,WARN,TEST<cr>", desc = "Telescope FIX list" },
+    {
+      "<leader>tr", function()
+        local line = vim.api.nvim_get_current_line()
+        local new_line = line:gsub("^(%s*[#%%%-//%*]?%s*)(%w+:%s*)", "%1")
+        vim.api.nvim_set_current_line(new_line)
+      end, desc = "Remove TODO keyword"
+    },
+  },
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     keywords = {
