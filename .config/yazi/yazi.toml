@@ -87,6 +87,9 @@ image_bound      = [ 0, 0 ]
 suppress_preload = false
 
 [plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
 
 fetchers = [
 	# Mimetype
