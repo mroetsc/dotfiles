@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "Reledia/glow", rev = "388e847" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "KKV9/compress", rev = "60b24af" }, { use = "yazi-rs/plugins:chmod", rev = "ad52adf" }]
+
+[flavor]
+deps = []
