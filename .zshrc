@@ -124,6 +124,9 @@ zellij_tab_name_update() {
 zellij_tab_name_update
 chpwd_functions+=(zellij_tab_name_update)
 
+# Disable vim mode
+bindkey -e
+
 # Helpful aliases
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
