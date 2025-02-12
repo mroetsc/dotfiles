@@ -9,7 +9,7 @@ return {
 
     vim.g.vimtex_compiler_latexmk = {
         options = {
-          '--auxdir=./build',
+          '--auxdir=./.build',
         }
     }
   end
