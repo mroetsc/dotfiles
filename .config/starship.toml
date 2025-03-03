@@ -30,7 +30,7 @@ untracked = '?${count}'
 
 [cmd_duration]
 format = '[⏱ $duration]($style)'
-min_time = 5_00
+min_time = 30_000
 show_notifications = true
 min_time_to_notify = 300_000
 
