@@ -153,8 +153,8 @@ alias yasearin="yay -Slq | sk --multi --preview 'yay -Si {1}' | xargs -rp yay -S
 alias uvp="uv pip"
 #alias =''
 
-# uutils implementation of coreutils
-source ~/.config/zsh/uutils-coreutils.zsh
+# other aliases
+source ~/.config/zsh/*
 
 # Custom exports
 export VISUAL="nvim"
