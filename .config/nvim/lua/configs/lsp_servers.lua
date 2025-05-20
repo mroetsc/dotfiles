@@ -5,7 +5,6 @@ return {
   "pyright",
   "jinja_lsp",
   "yamlls",
-  "yaml-language-server",
   "bashls",
   "twiggy_language_server",
   "typos_lsp",
