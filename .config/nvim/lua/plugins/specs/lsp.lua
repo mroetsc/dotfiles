@@ -22,43 +22,47 @@ return {
       end
     end,
   },
+
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = require("configs.lsp_servers"),
-      automatic_installation = true,
+    event = "BufReadPre",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
     },
-  },
-  {
-    "neovim/nvim-lspconfig",
     config = function()
       require("nvchad.configs.lspconfig").defaults()
       local lspconfig = require("lspconfig")
       local on_attach = require("nvchad.configs.lspconfig").on_attach
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-      -- Setup all servers installed by mason-lspconfig
-      require("mason-lspconfig").setup_handlers {
-        function(server_name)
-          lspconfig[server_name].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-          }
-        end,
+      -- Setup mason-lspconfig
+      require("mason-lspconfig").setup({
+        ensure_installed = require("configs.lsp_servers"),
+        automatic_installation = true,
+      })
 
-        -- Special configuration for specific servers
-        ["typos_lsp"] = function()
-          lspconfig.typos_lsp.setup {
+      -- Configure LSP servers
+      for _, server in ipairs(require("configs.lsp_servers")) do
+        if server ~= "typos_lsp" then
+          lspconfig[server].setup({
             on_attach = on_attach,
             capabilities = capabilities,
-            init_options = {
-              config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
-              diagnosticSeverity = "Warning"
-            },
-            filetypes = { "*" },
-          }
-        end,
-      }
+          })
+        end
+      end
+
+      -- Special configuration for typos_lsp
+      lspconfig.typos_lsp.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        init_options = {
+          -- Fix the path to match your actual file location
+          config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
+          diagnosticSeverity = "Warning"
+        },
+        filetypes = { "*" },
+      })
     end,
   },
 }
