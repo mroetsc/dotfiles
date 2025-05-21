@@ -8,6 +8,5 @@ return {
   "bashls",
   "twiggy_language_server",
   "typos_lsp",
-  "rust_analyzer",
   "clangd",
 }
