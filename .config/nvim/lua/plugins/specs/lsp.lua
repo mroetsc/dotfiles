@@ -52,7 +52,7 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
             init_options = {
-              config = '~/.config/nvim/lua/configs/sub/typos_lsp.toml',
+              config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
               diagnosticSeverity = "Warning"
             },
             filetypes = { "*" },
