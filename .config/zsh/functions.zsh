@@ -31,3 +31,8 @@ function jelly {
 
   scp "$source" "${JELLY_USER}@${JELLY_IP}:${JELLY_PATH}"
 }
+
+function copypath {
+  local file="$1"
+  realpath $file | wl-copy
+}
