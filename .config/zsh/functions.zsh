@@ -33,6 +33,10 @@ function jelly {
 }
 
 function copypath {
-  local file="$1"
-  realpath $file | wl-copy
+  if [[ -z "$1" ]]; then
+    local file="."
+  else
+    local file="$1"
+  fi
+  realpath "$file" | wl-copy
 }
