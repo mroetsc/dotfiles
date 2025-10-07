@@ -36,8 +36,8 @@ fi
 wpctl set-default "$DEVICE_ID"
 
 if [ $? -eq 0 ]; then
-    echo "✓ Switched to $FRIENDLY_NAME (ID: $DEVICE_ID)"
+    dunstify -a 'Mic Input' -t 500 "Switched to $FRIENDLY_NAME (ID: $DEVICE_ID)"
 else
-    echo "✗ Failed to switch to $FRIENDLY_NAME"
+    dunstify -a 'Mic Input' "Failed to switch to $FRIENDLY_NAME"
     exit 1
 fi
