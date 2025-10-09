@@ -15,7 +15,8 @@
       "custom/separator",
       "wlr/taskbar",
       "custom/separator",
-      "custom/spotify"
+      "custom/spotify",
+      "custom/tidal"
     ],
 
     "modules-center": [
@@ -70,6 +71,17 @@
       "on-click-middle": "close",
       "ignore-list": [],
       "app_ids-mapping": {}
+    },
+
+    "custom/tidal": {
+    	"exec": "~/.config/waybar/modules/tidal-waybar.py",
+    	"interval": 1,
+    	"return-type": "string",
+        "on-click": "WAYBAR_BUTTON=1 ~/.config/waybar/modules/tidal-waybar.py",
+        "on-click-middle": "WAYBAR_BUTTON=2 ~/.config/waybar/modules/tidal-waybar.py",
+        "on-click-right": "WAYBAR_BUTTON=3 ~/.config/waybar/modules/tidal-waybar.py",
+        "on-scroll-up": "",
+        "on-scroll-down" : ""
     },
 
     "custom/spotify": {
