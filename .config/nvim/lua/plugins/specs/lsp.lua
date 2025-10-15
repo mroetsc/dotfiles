@@ -32,36 +32,34 @@ return {
     },
     config = function()
       require("nvchad.configs.lspconfig").defaults()
-      local lspconfig = require("lspconfig")
       local on_attach = require("nvchad.configs.lspconfig").on_attach
       local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-      -- Setup mason-lspconfig
+      -- Setup mason-lspconfig with handlers
       require("mason-lspconfig").setup({
         ensure_installed = require("configs.lsp_servers"),
         automatic_installation = true,
-      })
-
-      -- Configure LSP servers
-      for _, server in ipairs(require("configs.lsp_servers")) do
-        if server ~= "typos_lsp" then
-          lspconfig[server].setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-          })
-        end
-      end
-
-      -- Special configuration for typos_lsp
-      lspconfig.typos_lsp.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        init_options = {
-          -- Fix the path to match your actual file location
-          config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
-          diagnosticSeverity = "Warning"
+        handlers = {
+          -- Default handler for all servers
+          function(server_name)
+            require("lspconfig")[server_name].setup({
+              on_attach = on_attach,
+              capabilities = capabilities,
+            })
+          end,
+          -- Special handler for typos_lsp
+          ["typos_lsp"] = function()
+            require("lspconfig").typos_lsp.setup({
+              on_attach = on_attach,
+              capabilities = capabilities,
+              init_options = {
+                config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
+                diagnosticSeverity = "Warning"
+              },
+              filetypes = { "*" },
+            })
+          end,
         },
-        filetypes = { "*" },
       })
     end,
   },
