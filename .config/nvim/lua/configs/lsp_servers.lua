@@ -9,4 +9,5 @@ return {
   "twiggy_language_server",
   "typos_lsp",
   "clangd",
+  "tinymist",
 }
