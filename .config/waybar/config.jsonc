@@ -80,8 +80,8 @@
         "on-click": "WAYBAR_BUTTON=1 ~/.config/waybar/modules/tidal-waybar.py",
         "on-click-middle": "WAYBAR_BUTTON=2 ~/.config/waybar/modules/tidal-waybar.py",
         "on-click-right": "WAYBAR_BUTTON=3 ~/.config/waybar/modules/tidal-waybar.py",
-        "on-scroll-up": "",
-        "on-scroll-down" : ""
+        "on-scroll-up": "~/.config/hypr/scripts/tidalvolumecontrol.sh up",
+        "on-scroll-down" : "~/.config/hypr/scripts/tidalvolumecontrol.sh down"
     },
 
     "custom/spotify": {
