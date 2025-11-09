@@ -45,9 +45,12 @@ case "$1" in
   *)
     if [[ $PLAYBACK_STATUS = "playing" ]]; then
       ICON=""
-    else
+      echo "$ICON $CURRENT_TITLE - $CURRENT_ARTIST"
+    elif [[ $PLAYBACK_STATUS = "paused" ]]; then
       ICON=""
+      echo "$ICON $CURRENT_TITLE - $CURRENT_ARTIST"
+    else
+      echo ""
     fi
-    echo "$ICON $CURRENT_TITLE - $CURRENT_ARTIST"
 esac
 
