@@ -77,6 +77,8 @@ jq
 cpio
 cmake
 brightnessctl
+blueman
+pavucontrol
 
 # AUR
 wlogout
