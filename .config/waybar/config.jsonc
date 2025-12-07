@@ -81,7 +81,8 @@
         "on-click-middle": "~/.config/waybar/modules/tidal-waybar.sh previous",
         "on-click-right": "~/.config/waybar/modules/tidal-waybar.sh next",
         "on-scroll-up": "~/.config/waybar/modules/tidal-waybar.sh volume-up",
-        "on-scroll-down" : "~/.config/waybar/modules/tidal-waybar.sh volume-down"
+        "on-scroll-down" : "~/.config/waybar/modules/tidal-waybar.sh volume-down",
+        "max-length": 100,
     },
 
     "custom/spotify": {
