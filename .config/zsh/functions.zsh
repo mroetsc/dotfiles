@@ -38,5 +38,5 @@ function copypath {
   else
     local file="$1"
   fi
-  realpath "$file" | wl-copy
+  realpath "$file" | wl-copy -n
 }
