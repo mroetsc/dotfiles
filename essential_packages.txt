@@ -79,6 +79,7 @@ cmake
 brightnessctl
 blueman
 pavucontrol
+pamixer
 
 # AUR
 wlogout
