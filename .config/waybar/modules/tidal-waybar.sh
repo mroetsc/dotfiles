@@ -10,7 +10,7 @@ CURRENT_ARTIST=$(playerctl --player=tidal-hifi metadata --format {{artist}})
 PLAYBACK_STATUS=$(playerctl --player=tidal-hifi status | tr '[:upper:]' '[:lower:]')
 
 # volume control
-SINK_INPUT_ID=$(pactl list sink-inputs | awk '/^Sink Input #/{id=$3} /application.name = "Tidal HiFi"/{print id; exit}' | tr -d '#')
+SINK_INPUT_ID=$(pactl list sink-inputs | awk '/^Sink Input #/{id=$3} /application.process.binary = "tidal-hifi"/{print id; exit}' | tr -d '#')
 VOLUME=$(pactl list sink-inputs | awk -v id="$SINK_INPUT_ID" ' $0 ~ "^Sink Input #" id "$" {found=1} found && /Volume:/ {print $5; exit}')
 
 increase_volume() {
