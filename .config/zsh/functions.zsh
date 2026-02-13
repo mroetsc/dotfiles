@@ -40,3 +40,14 @@ function copypath {
   fi
   realpath "$file" | wl-copy -n
 }
+
+function create_3d_dirs {
+  if [[ -z "$1" ]]; then
+    head="."
+  else
+    head="$1"
+  fi
+
+  mkdir -p $head/{src,exports,gcode}
+  cd $head
+}
