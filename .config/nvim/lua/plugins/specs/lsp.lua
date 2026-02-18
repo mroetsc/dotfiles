@@ -25,6 +25,7 @@ return {
 
   {
     "mason-org/mason-lspconfig.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
         ensure_installed = require("configs.lsp_servers"),
     },
