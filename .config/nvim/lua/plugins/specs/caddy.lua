@@ -1,9 +1,13 @@
 return {
   {
     "isobit/vim-caddyfile",
-    event = { "BufRead" },
+    ft = 'caddyfile',
     config = function()
-      vim.bo.filetype = "caddyfile"
+    vim.filetype.add({
+      pattern = {
+        ['Caddyfile'] = 'caddyfile',
+      },
+    })
     end,
   },
 }

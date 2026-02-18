@@ -1,6 +1,6 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>mm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
@@ -24,43 +24,17 @@ return {
   },
 
   {
-    "williamboman/mason-lspconfig.nvim",
-    event = "BufReadPre",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "neovim/nvim-lspconfig",
-    },
-    config = function()
-      require("nvchad.configs.lspconfig").defaults()
-      local on_attach = require("nvchad.configs.lspconfig").on_attach
-      local capabilities = require("nvchad.configs.lspconfig").capabilities
-
-      -- Setup mason-lspconfig with handlers
-      require("mason-lspconfig").setup({
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
         ensure_installed = require("configs.lsp_servers"),
-        automatic_installation = true,
-        handlers = {
-          -- Default handler for all servers
-          function(server_name)
-            require("lspconfig")[server_name].setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-            })
-          end,
-          -- Special handler for typos_lsp
-          ["typos_lsp"] = function()
-            require("lspconfig").typos_lsp.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              init_options = {
-                config = '~/.config/nvim/lua/configs/misc/typos_lsp.toml',
-                diagnosticSeverity = "Warning"
-              },
-              filetypes = { "*" },
-            })
-          end,
-        },
-      })
+    },
+    dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
+    config = function(_, opts)
+      require("mason-lspconfig").setup(opts)
+      require("configs.lsp_configs")
     end,
   },
 }
