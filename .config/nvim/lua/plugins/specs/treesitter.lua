@@ -1,20 +1,12 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   opts = {
     ensure_installed = {
       "vim", "lua", "vimdoc",
       "html", "css",
       "markdown", "markdown_inline",
     },
+    highlight = { enable = true },
   },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
-
-    -- Treat .mdx files as markdown
-    vim.filetype.add({
-      extension = {
-        mdx = "markdown",
-      },
-    })
-  end,
 }
