@@ -10,4 +10,5 @@ return {
   "typos_lsp",
   "clangd",
   "tinymist",
+  "marksman",
 }
