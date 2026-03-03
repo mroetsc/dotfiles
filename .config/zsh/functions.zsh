@@ -51,3 +51,11 @@ function create_3d_dirs {
   mkdir -p $head/{src,exports,gcode}
   cd $head
 }
+
+function cdr {
+  if git rev-parse >/dev/null 2>&1 ; then
+    cd $(git rev-parse --show-toplevel)
+  else
+    "Not in a git repo"
+  fi
+}
