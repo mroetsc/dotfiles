@@ -1,6 +1,6 @@
 return {
-  {
-    "projectfluent/fluent.vim",
-    ft = "fluent"
-  },
+	{
+		"projectfluent/fluent.vim",
+		ft = "fluent",
+	},
 }
