@@ -15,5 +15,14 @@ return {
     'mrcjkb/rustaceanvim',
     version = '^4',
     lazy = false,
-  }
+      server = {
+        default_settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              features = "all",
+                    },
+                },
+            },
+        },
+    }
 }
