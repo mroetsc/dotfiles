@@ -13,16 +13,22 @@ return {
 
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4",
 		lazy = false,
-		server = {
-			default_settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						features = "all",
+		init = function()
+			vim.g.rustaceanvim = {
+				server = {
+					default_settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								features = "all",
+							},
+							rustfmt = {
+								overrideCommand = { "dx", "fmt", "-f", "-" },
+							},
+						},
 					},
 				},
-			},
-		},
+			}
+		end,
 	},
 }
