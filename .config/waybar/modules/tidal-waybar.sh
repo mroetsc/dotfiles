@@ -5,8 +5,8 @@ VOLUME_STEP="5"
 ###
 
 # playback control
-CURRENT_TITLE=$(playerctl --player=tidal-hifi metadata --format {{title}})
-CURRENT_ARTIST=$(playerctl --player=tidal-hifi metadata --format {{artist}})
+CURRENT_TITLE=$(playerctl --player=tidal-hifi metadata --format '{{title}}' | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+CURRENT_ARTIST=$(playerctl --player=tidal-hifi metadata --format '{{artist}}' | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
 PLAYBACK_STATUS=$(playerctl --player=tidal-hifi status | tr '[:upper:]' '[:lower:]')
 
 # volume control
