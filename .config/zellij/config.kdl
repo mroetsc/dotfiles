@@ -152,6 +152,7 @@ keybinds clear-defaults=true {
         bind "Alt Shift n" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Quit; }
+        bind "Alt v" { EditScrollback; }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }
