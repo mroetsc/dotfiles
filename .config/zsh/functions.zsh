@@ -33,12 +33,30 @@ function jelly {
 }
 
 function copypath {
-  if [[ -z "$1" ]]; then
-    local file="."
-  else
-    local file="$1"
+  local git_relative=false
+  local OPTIND=1
+
+  while getopts "g" opt; do
+    case "$opt" in
+      g) git_relative=true ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+
+  local file="${1:-.}"
+  local abs_path
+  abs_path="$(realpath "$file")"
+
+  if [[ "$git_relative" == true ]]; then
+    local git_root
+    if ! git_root="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+      echo "Not in a git repo"
+      return 1
+    fi
+    abs_path="${abs_path#"$git_root"/}"
   fi
-  realpath "$file" | wl-copy -n
+
+  printf '%s' "$abs_path" | wl-copy -n
 }
 
 function create_3d_dirs {
