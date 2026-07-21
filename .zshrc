@@ -130,6 +130,6 @@ eval "$(atuin init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
-if [[ -z $(echo $ZELLIJ_SESSION_NAME) ]]; then
-  zellij
-fi
+# if [[ -z $(echo $ZELLIJ_SESSION_NAME) ]]; then
+#   zellij
+# fi
