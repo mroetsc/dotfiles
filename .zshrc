@@ -120,7 +120,9 @@ alias uvp="uv pip"
 #alias =''
 
 # other aliases
-source ~/.config/zsh/*
+for rcfile in ~/.config/zsh/*.zsh(N); do
+  source "$rcfile"
+done
 
 # Custom exports
 export VISUAL="nvim"
