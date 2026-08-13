@@ -261,7 +261,7 @@
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "~/.config/hypr/scripts/logoutlaunch.sh 2",
+        "on-click": "wleave -l ~/.config/wleave/layout.json -C ~/.config/wleave/style.css -x",
         "interval" : 86400,
         "tooltip": true
     },
