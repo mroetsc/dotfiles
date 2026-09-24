@@ -1,5 +1,7 @@
 [plugin]
-deps = [{ use = "Reledia/glow", rev = "388e847" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "KKV9/compress", rev = "60b24af" }, { use = "yazi-rs/plugins:chmod", rev = "ad52adf" }]
-
-[flavor]
 deps = []
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-frappe"
+rev = "20b47bf"
+hash = "ab7c71d442d3a9e16331ea0d95ab36a8"
