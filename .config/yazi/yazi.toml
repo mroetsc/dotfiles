@@ -68,10 +68,16 @@ trash = [
 	{ run = "ya pub trash-empty --list %S",   desc = "Empty trash bin" },
 ]
 
+browser = [
+	{ run = "xdg-open %s",   desc = "Open in browser", for = "linux", orphan = true },
+]
+
 [open]
 rules = [
 	# Folder
 	{ mime = "folder/*", use = [ "edit", "open", "reveal" ] },
+	# HTML
+	{ mime = "text/html", use = [ "browser", "edit", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
